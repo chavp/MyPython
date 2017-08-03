@@ -35,6 +35,8 @@ def draw_box(n):
 draw_box(4)
 
 import turtle
+wn = turtle.Screen()
+
 bob = turtle.Turtle()
 #print(bob)
 def square(t):
@@ -50,7 +52,7 @@ def circle(t, r):
 	arc(t, r, 360)
 
 def arc(t, r, angle):
-	arc_length = 2 * math.pi * r * angle / 360
+	arc_length = 2 * math.pi * r * math.fabs(angle) / 360
 	n = int(arc_length / 3) + 1
 	step_length = arc_length / n
 	step_angle = angle / n
@@ -68,6 +70,6 @@ def polyline(t, n, length, angle):
 #polyline(bob, n=8, length=70, angle=45)
 
 # Exercise 4-2.
-arc(bob, r=100, angle=400)
+arc(bob, r=100, angle=70)
 
 turtle.mainloop()
